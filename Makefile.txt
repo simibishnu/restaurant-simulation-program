@@ -1,0 +1,23 @@
+OPTIONS = -Wall
+OBJ = load.o main.o patrons.o restaurant.o resv.o
+
+a4:	$(OBJ)
+	gcc -o a4 $(OBJ)
+
+load.o:	load.c defs.h
+	gcc $(OPTIONS) -c load.c
+	
+main.o:	main.c defs.h
+	gcc $(OPTIONS) -c main.c
+
+patrons.o:	patrons.c defs.h
+	gcc $(OPTIONS) -c patrons.c
+
+restaurant.o:	restaurant.c defs.h
+	gcc $(OPTIONS) -c restaurant.c
+
+resv.o:	resv.c defs.h
+	gcc $(OPTIONS) -c resv.c
+
+clean:
+	rm -f a4 $(OBJ)
